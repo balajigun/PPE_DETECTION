@@ -1,0 +1,33 @@
+# Virtual Environment
+ppe/
+
+# Python Cache
+__pycache__/
+*.py[cod]
+
+# VS Code
+.vscode/
+
+# PyCharm
+.idea/
+
+# Environment Variables
+.env
+
+# Model Weights
+*.pt
+*.onnx
+*.engine
+
+# Output Videos
+data/output_videos/
+
+# Reports
+reports/*.csv
+
+# Logs
+*.log
+
+# Operating System Files
+.DS_Store
+Thumbs.db
