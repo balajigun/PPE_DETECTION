@@ -9,6 +9,7 @@ from config import (
 )
 
 from video_reader import VideoReader
+from detector import Detector
 
 
 def main():
@@ -24,15 +25,11 @@ def main():
 
     print("\nOpening Video...\n")
 
-    # -------------------------------------------------
     # Initialize Video Reader
-    # -------------------------------------------------
     reader = VideoReader(VIDEO_PATH)
     reader.open()
 
-    # -------------------------------------------------
     # Display Video Information
-    # -------------------------------------------------
     info = reader.get_video_info()
 
     print("=" * 50)
@@ -44,11 +41,11 @@ def main():
     print(f"Height       : {info['height']}")
     print(f"Total Frames : {info['total_frames']}")
 
+    # Initialize Detector
+    detector = Detector()
+
     print("\nPress 'Q' to quit.\n")
 
-    # -------------------------------------------------
-    # Read and Display Video
-    # -------------------------------------------------
     while True:
 
         success, frame = reader.read()
@@ -57,16 +54,16 @@ def main():
             print("End of video reached.")
             break
 
-        cv2.imshow("Original Video", frame)
+        detections = detector.detect(frame)
 
-        # Exit when 'Q' or 'q' is pressed
-        if cv2.waitKey(1) & 0xFF in (ord("q"), ord("Q")):
-            print("Video stopped by user.")
+        # Show the current frame
+        cv2.imshow("PPE Monitoring", frame)
+
+        # Press Q to exit
+        if cv2.waitKey(1) & 0xFF == ord("q"):
+            print("Stopped by user.")
             break
 
-    # -------------------------------------------------
-    # Cleanup
-    # -------------------------------------------------
     reader.release()
     cv2.destroyAllWindows()
 
