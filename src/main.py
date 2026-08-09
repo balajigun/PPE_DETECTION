@@ -10,6 +10,8 @@ from config import (
 
 from video_reader import VideoReader
 from detector import Detector
+from visualizer import Visualizer
+from ppe_rules import PPERules
 
 
 def main():
@@ -43,7 +45,8 @@ def main():
 
     # Initialize Detector
     detector = Detector()
-
+    ppe_rules = PPERules()
+    visualizer = Visualizer()
     print("\nPress 'Q' to quit.\n")
 
     while True:
@@ -55,9 +58,19 @@ def main():
             break
 
         detections = detector.detect(frame)
+        worker_status = ppe_rules.evaluate(detections)
+        for detection in detections:
+            print(detection)
 
-        # Show the current frame
-        cv2.imshow("PPE Monitoring", frame)
+        frame = visualizer.draw(
+        frame,
+        worker_status
+        ) 
+
+        cv2.imshow(
+        "PPE Monitoring",
+        frame
+        )
 
         # Press Q to exit
         if cv2.waitKey(1) & 0xFF == ord("q"):

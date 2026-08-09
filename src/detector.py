@@ -46,8 +46,10 @@ class Detector:
         list[Detection]
         """
 
-        results = self.model(
+        results = self.model.track(
             frame,
+            persist=True,
+            tracker="bytetrack.yaml",
             conf=CONFIDENCE_THRESHOLD,
             iou=IOU_THRESHOLD,
             verbose=False
@@ -68,15 +70,19 @@ class Detector:
                 int,
                 box.xyxy[0].tolist()
             )
+
+            if box.id is not None:
+                track_id = int(box.id.item())
+            else:
+                track_id = None
             
             detections.append(
-
                 Detection(
                     class_id=class_id,
                     class_name=class_name,
                     confidence=confidence,
-                    bbox=(x1, y1, x2, y2)
+                    bbox=(x1, y1, x2, y2),
+                    track_id=track_id           
                 )
-
             )
         return detections

@@ -9,7 +9,7 @@ every detector converts its results into Detection objects.
 """
 
 from dataclasses import dataclass
-from typing import Tuple
+from typing import Optional, Tuple
 
 
 @dataclass
@@ -22,3 +22,6 @@ class Detection:
     class_name: str
     confidence: float
     bbox: Tuple[int, int, int, int]
+
+    # Assigned by tracker
+    track_id: Optional[int] = None

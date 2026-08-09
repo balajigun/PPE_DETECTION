@@ -31,7 +31,7 @@ OUTPUT_VIDEO_PATH = OUTPUT_VIDEO_DIR / OUTPUT_VIDEO_NAME
 # =====================================================
 # Model
 # =====================================================
-MODEL_PATH = MODEL_DIR / "yolov26.pt"
+MODEL_PATH = MODEL_DIR / "best.pt"
 
 # =====================================================
 # Detection Settings
