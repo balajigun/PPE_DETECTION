@@ -49,7 +49,7 @@ class Detector:
         results = self.model.track(
             frame,
             persist=True,
-            tracker="bytetrack.yaml",
+            tracker="ocsort.yaml",
             conf=CONFIDENCE_THRESHOLD,
             iou=IOU_THRESHOLD,
             verbose=False

@@ -20,10 +20,7 @@ __pycache__/
 *.engine
 
 # Output Videos
-data/output_videos/
-
-# Reports
-reports/*.csv
+data/input_videos/
 
 # Logs
 *.log

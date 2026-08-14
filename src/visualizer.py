@@ -3,9 +3,7 @@ visualizer.py
 
 Draws detection results on video frames.
 """
-
 import cv2
-
 
 class Visualizer:
     """
@@ -37,50 +35,50 @@ class Visualizer:
             track_id = worker["track_id"]
             status = worker["status"]
 
-        # Choose color
-        if status == "SAFE":
-            box_color = (0, 255, 0)      # Green
-        else:
-            box_color = (0, 0, 255)      # Red
+            # Choose color
+            if status == "SAFE":
+                box_color = (0, 255, 0)      # Green
+            else:
+                box_color = (0, 0, 255)      # Red
 
-        label = f"ID {track_id} | {status}"
+            label = f"ID {track_id} | {status}"
 
         # Draw bounding box
-        cv2.rectangle(
-            frame,
-            (x1, y1),
-            (x2, y2),
-            box_color,
-            self.thickness
-        )
+            cv2.rectangle(
+                frame,
+                (x1, y1),
+                (x2, y2),
+                box_color,
+                self.thickness
+            )
 
         # Get text size
-        (text_width, text_height), _ = cv2.getTextSize(
-            label,
-            self.font,
-            self.font_scale,
+            (text_width, text_height), _ = cv2.getTextSize(
+                label,
+                self.font,
+                self.font_scale,
             1
-        )
+            )
 
         # Draw label background
-        cv2.rectangle(
-            frame,
-            (x1, y1 - text_height - 10),
-            (x1 + text_width, y1),
-            box_color,
-            -1
-        )
+            cv2.rectangle(
+                frame,
+                (x1, y1 - text_height - 10),
+                (x1 + text_width, y1),
+                box_color,
+                -1
+            )
 
         # Draw label
-        cv2.putText(
-            frame,
-            label,
-            (x1, y1 - 5),
-            self.font,
-            self.font_scale,
-            self.text_color,
-            1,
-            cv2.LINE_AA
-        )
+            cv2.putText(
+                frame,
+                label,
+                (x1, y1 - 5),
+                self.font,
+                self.font_scale,
+                self.text_color,
+                1,
+                cv2.LINE_AA
+            )
 
         return frame

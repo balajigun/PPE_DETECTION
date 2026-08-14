@@ -22,7 +22,7 @@ REPORT_DIR = PROJECT_ROOT / "reports"
 # =====================================================
 # Video
 # =====================================================
-VIDEO_NAME = "factory.mp4"
+VIDEO_NAME = "factory_3.mp4"
 VIDEO_PATH = INPUT_VIDEO_DIR / VIDEO_NAME
 
 OUTPUT_VIDEO_NAME = "output.mp4"
@@ -36,7 +36,7 @@ MODEL_PATH = MODEL_DIR / "best.pt"
 # =====================================================
 # Detection Settings
 # =====================================================
-CONFIDENCE_THRESHOLD = 0.50
+CONFIDENCE_THRESHOLD = 0.25
 IOU_THRESHOLD = 0.45
 
 # =====================================================
