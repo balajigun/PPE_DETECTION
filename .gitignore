@@ -4,27 +4,86 @@ ppe/
 # Python Cache
 __pycache__/
 *.py[cod]
+*$py.class
 
 # VS Code
 .vscode/
 
 # PyCharm
 .idea/
+.idea/
+*.code-workspace
 
 # Environment Variables
 .env
+.env.*
+*.env
 
 # Model Weights
 *.pt
 *.onnx
 *.engine
 
-# Output Videos
-data/input_videos/
-
-# Logs
-*.log
-
 # Operating System Files
 .DS_Store
 Thumbs.db
+desktop.ini
+
+
+# Local secrets / credentials
+secrets/
+credentials/
+*.secret
+*.secrets
+secrets.json
+credentials.json
+config.local.py
+
+# Input Videos
+data/input_videos/*
+!data/input_videos/.gitkeep
+
+# Generated Output Videos
+data/output_videos/*
+!data/output_videos/.gitkeep
+
+# Generated Reports
+reports/*
+!reports/.gitkeep
+*.csv
+
+
+# Generated Alerts / Screenshots
+
+alerts/*
+!alerts/.gitkeep
+
+# Logs
+
+logs/*
+!logs/.gitkeep
+*.log
+
+# Temporary / Generated Files
+
+*.tmp
+*.temp
+*.bak
+*.swp
+*.swo
+
+# Jupyter Notebook Temporary Files
+
+.ipynb_checkpoints/
+
+# Build / Distribution Files
+
+build/
+dist/
+*.egg-info/
+
+# Coverage / Testing
+
+.coverage
+htmlcov/
+.pytest_cache/

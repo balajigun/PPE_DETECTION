@@ -15,6 +15,7 @@ from visualizer import Visualizer
 from ppe_rules import PPERules
 from ppe_state import PPEStateTracker
 from csv_logger import CSVLogger
+from alert_manager import AlertManager
 
 
 def main():
@@ -72,6 +73,19 @@ def main():
     ppe_rules = PPERules()
     ppe_state = PPEStateTracker()
     visualizer = Visualizer()
+    alert_manager = AlertManager(
+    smtp_server="smtp.gmail.com",
+    smtp_port=587,
+    sender_email=os.getenv("PPE_SENDER_EMAIL"),
+    sender_password=os.getenv("PPE_EMAIL_PASSWORD"),
+    supervisor_email=os.getenv("PPE_SUPERVISOR_EMAIL"),
+    screenshot_dir=os.path.join(
+        PROJECT_ROOT,
+        "alerts"
+    ),
+    cooldown_seconds=60
+)
+
     print("\nPress 'Q' to quit.\n")
 
     # Initialize CSV Logger
@@ -115,6 +129,20 @@ def main():
         frame,
         worker_status
         )
+
+        for worker in worker_status:
+
+            violations = worker.get(
+                "confirmed_violations",
+                []
+            )
+
+            alert_manager.process_alert(
+                frame=frame,
+                frame_number=ppe_state.frame_number,
+                worker_id=worker["stable_worker_id"],
+                violations=violations
+            )
 
         # Save annotated frame to output video
         writer.write(frame) 
