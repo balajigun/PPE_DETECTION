@@ -113,6 +113,62 @@ The detected PPE objects are associated with the corresponding worker using the 
 
 ---
 
+## 🎥 Project Demo
+
+The following demonstrations show the PPE monitoring system running on recorded construction-site video.
+
+### OC-SORT Tracking
+
+Demonstrates worker detection, PPE detection, worker tracking, PPE violation identification and annotated output generation using OC-SORT.
+
+### 🎥 OC-SORT Tracking Demo
+
+[![OC-SORT PPE Monitoring Demo](docs/images/Violation_demo.png)](https://www.youtube.com/watch?v=_l1E8tSOTEg)
+
+*Click the image to watch the OC-SORT PPE monitoring demonstration.*
+
+
+### 🎥 OC-SORT Tracking Demo
+
+[![OC-SORT PPE Monitoring Demo](docs\images\violation_demo_2.png)](https://youtu.be/vb5aSOj4doE)
+
+*Click the image to watch the OC-SORT PPE monitoring demonstration.*
+
+### 🎥 Byte-Track Tracking Demo
+
+[![Byte-Track PPE Monitoring Demo](docs\images\violation_demo_bytetrack.png)](https://youtu.be/vdR2Vrz85NM)
+
+*Click the image to watch the OC-SORT PPE monitoring demonstration.*
+
+### 🎥 BOT-SORT Tracking Demo
+
+[![BOT-SORT PPE Monitoring Demo](docs\images\violation_demo_botsort.png)](https://youtu.be/IcE62PyZiIc)
+
+*Click the image to watch the OC-SORT PPE monitoring demonstration.*
+
+### Complete Pipeline
+
+```text
+Video Input
+     ↓
+YOLO PPE Detection
+     ↓
+Object Tracking
+     ↓
+Worker Identity Association
+     ↓
+Temporal PPE State Tracking
+     ↓
+Violation Confirmation
+     ↓
+Screenshot Evidence
+     ↓
+CSV Reporting
+     ↓
+Email Alert
+```
+
+
 ## 👷 Worker Tracking
 
 The project supports multi-object tracking using Ultralytics-compatible tracking algorithms such as:
@@ -202,6 +258,8 @@ The system maintains PPE history for:
 - Mask
 
 The PPE state is evaluated using the configured violation threshold.
+
+---
 
 ## 🚨 Violation Detection
 
@@ -332,6 +390,7 @@ Frame Number:
 Attachment:
 
 Violation screenshot![alt text](image.png)![alt text](image-1.png)
+
 
 ### Multiple Recipients
 
