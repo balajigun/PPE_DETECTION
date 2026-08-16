@@ -251,6 +251,24 @@ When a confirmed PPE violation occurs, the system automatically captures the cur
 
 The screenshot provides visual evidence of the detected violation and can be attached to the corresponding email alert.
 
+### Violation Screenshot
+
+<p align="center">
+  <img
+    src="docs/images/violation_alert_1.png"
+    alt="PPE Violation Email screenshot"
+    width="800"
+  />
+</p>
+
+<p align="center">
+  <img
+    src="docs/images/violation_alert_2.png"
+    alt="PPE Violation Screenshot"
+    width="800"
+  />
+</p>
+
 ### Evidence Generation Workflow
 ```
 PPE Violation Confirmed
