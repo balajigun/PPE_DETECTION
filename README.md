@@ -130,19 +130,19 @@ Demonstrates worker detection, PPE detection, worker tracking, PPE violation ide
 
 ### 🎥 OC-SORT Tracking Demo
 
-[![OC-SORT PPE Monitoring Demo](docs\images\violation_demo_2.png)](https://youtu.be/vb5aSOj4doE)
+[![OC-SORT PPE Monitoring Demo](docs/images/violation_demo_2.png)](https://youtu.be/vb5aSOj4doE)
 
 *Click the image to watch the OC-SORT PPE monitoring demonstration.*
 
 ### 🎥 Byte-Track Tracking Demo
 
-[![Byte-Track PPE Monitoring Demo](docs\images\violation_demo_bytetrack.png)](https://youtu.be/vdR2Vrz85NM)
+[![Byte-Track PPE Monitoring Demo](docs/images/violation_demo_bytetrack.png)](https://youtu.be/vdR2Vrz85NM)
 
 *Click the image to watch the OC-SORT PPE monitoring demonstration.*
 
 ### 🎥 BOT-SORT Tracking Demo
 
-[![BOT-SORT PPE Monitoring Demo](docs\images\violation_demo_botsort.png)](https://youtu.be/IcE62PyZiIc)
+[![BOT-SORT PPE Monitoring Demo](docs/images/violation_demo_botsort.png)](https://youtu.be/IcE62PyZiIc)
 
 *Click the image to watch the OC-SORT PPE monitoring demonstration.*
 
