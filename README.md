@@ -389,7 +389,6 @@ Frame Number:
 ```
 Attachment:
 
-Violation screenshot![alt text](image.png)![alt text](image-1.png)
 
 
 ### Multiple Recipients
